@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    // Variables iniciales par cuadrar los l[imites de movimiento de los enemigos.
+    // Variables iniciales par cuadrar los limites de movimiento de los enemigos.
     [SerializeField] GameObject pointA;
     [SerializeField] GameObject pointB;
 
@@ -35,6 +35,9 @@ public class EnemyMovement : MonoBehaviour
             // Se llaman los métodos para el movimiento.
             Movement();
             FlipMovement();
+        }
+        else{
+            speed = 0f;
         }
     }
 
