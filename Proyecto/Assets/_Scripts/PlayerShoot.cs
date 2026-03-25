@@ -8,23 +8,15 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bullet;
     public Transform startPos;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int maxShots = 3;   // máximo de disparos
+    private int currentShots = 0; // contador actual
 
     public void Shoot(InputAction.CallbackContext context){
-        if(context.started){
+        if(context.started && currentShots < maxShots){
             GameObject bulletClone = Instantiate(bullet, startPos.position, startPos.rotation);
             Destroy(bulletClone, 1);
+
+            currentShots++; // sumamos disparo
         }
     }
 }
