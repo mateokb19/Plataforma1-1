@@ -8,8 +8,10 @@ public class Coins : MonoBehaviour
    public int coinValue;
 
    private void OnTriggerEnter2D(Collider2D collision){
-	   if(collision.CompareTag("Player")){
-		   PlayerStats.score += coinValue;
+	   if(collision.CompareTag("Player"))
+		{
+			AudioManager.instance.PlayCoin();
+           PlayerStats.score += coinValue;
 		   Destroy(gameObject);
 		   Debug.Log(PlayerStats.score);
 	   }

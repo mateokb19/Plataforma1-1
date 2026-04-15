@@ -14,9 +14,15 @@ public class PlayerJump : MonoBehaviour
     }
 
     // Metodo jumpForce
-    public void Jump(){
-        if(Mathf.Abs(_rb.velocity.y) < 0.01)
-        _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    public void Jump()
+    {
+        
+        if (Mathf.Abs(_rb.velocity.y) < 0.01)
+        {
+            AudioManager.instance.PlayJump();
+            _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+        
     }
     
 }
