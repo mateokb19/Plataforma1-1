@@ -55,7 +55,7 @@ public class AudioManager : MonoBehaviour
 
     public void VolumeSlider()
     {
-        backgroundSource.volume = backgroundMusicSlider.value;
+        backgroundSource.volume = backgroundMusicSlider.value       ;
     }
 
 }
